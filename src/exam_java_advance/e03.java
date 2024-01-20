@@ -1,10 +1,12 @@
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class e03 {
     public static void main(String[] args) {
@@ -14,8 +16,9 @@ public class e03 {
 
         String userStr = scanner.next() + "-01";
         LocalDate inputDate = LocalDate.parse(userStr);
+        LocalDate staticDate = LocalDate.parse(userStr);
         inputDate = inputDate.plusMonths(1).minusDays(1);
-        System.out.println(inputDate);
+        // System.out.println(inputDate);
 
         List<Day> days = new ArrayList<>();
         while (restDate.isBefore(inputDate)) {
@@ -31,15 +34,18 @@ public class e03 {
                 days.get(i).setFlag(false);
             }
         }
-
-        Map<Day, String> holidayList = new HashMap<>();
+        // TreeMap compares keys to sort the order
+        Map<Day, String> holidayList = new TreeMap<>((date1, date2) -> date1.getDate().compareTo(date2.getDate()));
         for (Day day : days) {
             if (day.getFlag()) {
                 holidayList.put(day, day.getDate().getDayOfWeek().toString());
             }
         }
+        System.out.println("Origin hashmap: ");
+        holidayList.forEach((k, v) -> System.out.println(k + " : " + v));
+        System.out.println("Your holiday list (for weekend): ");
         holidayList.forEach((k, v) -> {
-            if (v.equals("SATURDAY") || v.equals("SUNDAY")) {
+            if ((v.equals("SATURDAY") || v.equals("SUNDAY")) && k.getDate().isAfter(staticDate)) {
                 System.out.println(k + " : " + v);
             }
         });
