@@ -42,7 +42,11 @@ public class e03 {
             }
         }
         System.out.println("Origin hashmap: ");
-        holidayList.forEach((k, v) -> System.out.println(k + " : " + v));
+        holidayList.forEach((k, v) -> {
+            if (k.getDate().isAfter(staticDate)) {
+                System.out.println(k + " : " + v);
+            }
+        });
         System.out.println("Your holiday list (for weekend): ");
         holidayList.forEach((k, v) -> {
             if ((v.equals("SATURDAY") || v.equals("SUNDAY")) && k.getDate().isAfter(staticDate)) {
