@@ -17,7 +17,7 @@ public class e02 {
         for (String user : userStrsSlice) {
             String[] tempArr = user.split(":");
             try {
-                Long id = Long.parseLong(tempArr[0]);
+                Long id = Long.valueOf(tempArr[0]);
                 String name = tempArr[1];
                 String gender = tempArr[2];
                 LocalDate birthday = LocalDate.parse(tempArr[3], DateTimeFormatter.ofPattern("yyyy-MM-dd"));
