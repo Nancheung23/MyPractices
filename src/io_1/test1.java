@@ -33,6 +33,9 @@ public class test1 {
         File relative = new File("io_1\\test.txt");
         String msg = relative.exists() ? ("File size: " + relative.length() + " Byte.") : "Not exists.";
         System.out.println(msg);
+
+        File extend = new File("C:\\Users\\zhang\\OneDrive\\桌面","C:\\Users\\zhang\\OneDrive\\桌面\\newFile.txt");
+        
         
     }
         public static String getRelativePath(File base, File target) throws IOException {
