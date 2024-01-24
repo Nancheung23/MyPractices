@@ -32,7 +32,7 @@ public class recursionTest4 {
                 if (file.isFile()) {
                     if (file.getName().contains(fileName)) {
                         System.out.println("File found: " + file.getAbsolutePath());
-                        // read file
+                        // read file, if .exe, can use runtime to execute
                         List<String> strs = Files.readAllLines(file.toPath());
                         for (String str : strs) {
                             System.out.println(str);
