@@ -1,5 +1,6 @@
 package io_1;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -51,5 +52,23 @@ public class ioStreamTest1 {
             System.out.print(resultLoop);
         }
         byteArr1.close();
+
+        // read all bytes
+        System.out.println("===============================");
+        InputStream byteArr2 = new FileInputStream("C:\\Users\\zhang\\IdeaProjects\\MyPractices\\src\\io_1\\test1.txt");
+        byte[] buffer2 = new byte[522];
+        int len1;
+        while ((len1 = byteArr2.read(buffer2)) != -1 ) {
+            String resultStr = new String(buffer2, 0, len1);
+            System.out.println(resultStr);
+        }
+        byteArr2.close();
+
+        // read all bytes (2)
+        System.out.println("===============================");
+        InputStream byteArr3 = new FileInputStream("C:\\Users\\zhang\\IdeaProjects\\MyPractices\\src\\io_1\\test1.txt");
+        byte[] buffer3 = byteArr3.readAllBytes();
+        System.out.println(new String(buffer3));
+        byteArr3.close();
     }
 }
