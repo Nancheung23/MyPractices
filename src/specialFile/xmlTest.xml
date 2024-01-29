@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--my first xml file-->
+<users>
+    <user id="1">
+        <name>nancheung</name>
+        <gender>male</gender>
+        <addr>Tampere</addr>
+        <password>wdxwgh29226</password>
+        <!--&lt : "<"-->
+        <!--&gt : ">"-->
+        <!--&amp : "&"-->
+        <!--&apos : "'"-->
+        <!--&quot : """-->
+        <!--[CDATA]-->
+    </user>
+        <user id="2">
+        <name>nan</name>
+        <gender>female</gender>
+        <addr>Beijing</addr>
+        <password>zwzyn9544</password>
+    </user>
+</users>
