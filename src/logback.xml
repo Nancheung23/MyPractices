@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--log back template-->
+<configuration>
+
+<!-- output log at console -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+<!-- output log at file -->
+<!-- Changing to RollingFileAppender -->
+<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>C:/Users/zhang/IdeaProjects/MyPractices/log/testLog.log</file>
+    <append>true</append>
+    <encoder>
+        <!-- time - level - func - msg -->
+        <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+        <fileNamePattern>C:/Users/zhang/IdeaProjects/MyPractices/log/testLog-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+        <maxFileSize>1MB</maxFileSize>
+        <maxHistory>30</maxHistory> <!-- 设置文件的最大历史记录数 -->
+        <totalSizeCap>1GB</totalSizeCap> <!-- 设置文件的总大小上限 -->
+    </rollingPolicy>
+</appender>
+
+    <!-- <logger name="com.nancheung" level="trace" additivity="false"> -->
+    <logger name="com.nancheung" level="ALL">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <root level="ALL">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>
+

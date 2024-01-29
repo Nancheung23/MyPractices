@@ -5,6 +5,9 @@
     ],
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\zhang\\Downloads\\dom4j-2.1.4.jar"
+        "c:\\Users\\zhang\\Downloads\\dom4j-2.1.4.jar",
+        "c:\\Users\\zhang\\Downloads\\logback-classic-1.4.9.jar",
+        "c:\\Users\\zhang\\Downloads\\logback-core-1.4.9.jar",
+        "c:\\Users\\zhang\\Downloads\\slf4j-api-2.0.9.jar"
     ]
 }
