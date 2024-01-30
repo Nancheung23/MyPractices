@@ -13,7 +13,7 @@ public class MyCallable implements Callable<String>{
         for (int i = 1; i <= n; i++) {
             sum += i;
         }
-        return "Thread result 1-" + n + ": " + sum; 
+        return Thread.currentThread().getName() + "Thread result 1-" + n + ": " + sum; 
     }
     
 }
