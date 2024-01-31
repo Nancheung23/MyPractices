@@ -36,5 +36,7 @@ public class ThreadPoolTest2 {
         System.out.println(f4.get());
 
         pool.shutdown();
+
+        // 6 states: New, Runnable(start()), Blocked(didn't succeed in competition), Waiting(need to be notified), TimedWaiting(sleep, wait), Terminated(Exception, run())
     }
 }
